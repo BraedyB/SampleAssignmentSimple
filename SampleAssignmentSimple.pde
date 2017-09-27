@@ -9,6 +9,7 @@ void setup() {
 void draw() {
   background(255);
   drawOutlineOfLights();
+  lights();
 }
 
 void drawOutlineOfLights() {
@@ -18,8 +19,17 @@ void drawOutlineOfLights() {
   rect(width/2, height/2, 75, 200, 10);
   
   //lights
-  fill(255);
-  ellipse(width/2, height/2 - 65, 50, 50); //top
-  ellipse(width/2, height/2, 50, 50); //middle
-  ellipse(width/2, height/2 + 65, 50, 50); //bottom
+}
+void lights(){
+ 
+  if (millis() >= 2000){
+    fill(255,0,0);
+    ellipse(width/2, height/2 - 65, 50, 50); //top
+  }else if (millis() >= 1000 && millis() < 2000){
+    fill(255,255,0);
+    ellipse(width/2, height/2, 50, 50); //middle
+  }else if (millis() >= 0 && millis() < 1000){
+    fill(0,255,0);
+    ellipse(width/2, height/2 + 65, 50, 50); //bottom
+  } 
 }
