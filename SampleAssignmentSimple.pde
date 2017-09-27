@@ -23,7 +23,7 @@ void drawOutlineOfLights() {
 void lights(){
  
   if (millis() >= 2000){
-    fill(255,0,0);
+    fill(random(255),random(255),random(255));
     ellipse(width/2, height/2 - 65, 50, 50); //top
   }else if (millis() >= 1000 && millis() < 2000){
     fill(255,255,0);
